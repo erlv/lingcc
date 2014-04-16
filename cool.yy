@@ -7,12 +7,13 @@
  *   ./a.out < inputfile
  */
 %{
+
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
 
 using namespace std;
-void yyerror(char *s);        /*  defined below; called for each parse error */
+void yyerror(const char *s);        /*  defined below; called for each parse error */
 extern int yylex();           /*  the entry point to the lexer; must be declared in this file  */
 
 /************************************************************************/
@@ -163,7 +164,7 @@ var  : VAR                  { $$ = new Variable($1); }
 %%
 
 /* This function is called automatically when Bison detects a parse error. */
-void yyerror(char *s)
+void yyerror(const char *s)
 {
   extern int num_lines;
 
@@ -171,7 +172,7 @@ void yyerror(char *s)
   cerr << endl;
 }
 
-int main(int argc, char **argv) {
+int main() {
   yyparse();
   ast_root->print(0);
 }  

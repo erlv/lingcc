@@ -217,3 +217,7 @@ pip-log.txt
 cool.tab.c
 cool.tab.h
 lex.yy.c
+cool.output
+cool.tab.cc
+cool.tab.hh
+lex.yy.cc

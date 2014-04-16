@@ -9,7 +9,7 @@ need to compile with -lfl
 class Expr;
 class Variable;
 
-#include "cool.tab.h"
+#include "cool.tab.hh"
 
 int num_lines = 0;
 %}
